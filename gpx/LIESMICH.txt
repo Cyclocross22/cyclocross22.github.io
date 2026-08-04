@@ -1,0 +1,50 @@
+Streckendateien (GPX) — Unicon22 Cyclocross, Schlosspark Steyr
+===============================================================
+
+WICHTIG: Der offizielle Kurs steckt NICHT in diesem Ordner, sondern direkt
+in index.html (Konstante BUILTIN_TRACKS). Grund: Wenn man die index.html per
+Doppelklick oeffnet, verbietet der Browser jeden Zugriff auf lokale Dateien —
+ein Nachladen aus diesem Ordner wuerde still fehlschlagen und die Karte
+bliebe ohne Strecke.
+
+Unicon22_Rundkurs.gpx ist dieselbe Strecke als Datei: zum Weitergeben, zum
+Laden auf dem Handy oder zum Oeffnen in anderen Programmen.
+
+
+Kurs ersetzen (nach dem Abfahren)
+---------------------------------
+
+Der einfachste Weg, ohne Codeaenderung:
+
+  1. Kurs mit dem Button (Aufnahme) abfahren
+  2. Aufnahme als GPX exportieren
+  3. In der App: Button 📊 → Tab "Laden" → Datei auswaehlen
+
+Die importierte Strecke wird dauerhaft gespeichert und liegt neben dem
+eingebetteten Kurs. Den eingebetteten kann man danach in der Streckenliste
+ausblenden oder loeschen.
+
+
+Kurs fest ersetzen (im Quelltext)
+---------------------------------
+
+  1. In index.html nach BUILTIN_TRACKS suchen
+  2. Den GPX-Text zwischen <trkseg> und </trkseg> austauschen
+  3. version um 1 hochzaehlen  ← nicht vergessen!
+  4. Diese Datei (Unicon22_Rundkurs.gpx) gleich mit austauschen
+
+Ohne Schritt 3 behalten alle Geraete, auf denen die App schon einmal lief,
+die alte Strecke — der neue Verlauf kommt dort nie an.
+
+
+Zusaetzliche Strecken aus diesem Ordner laden
+---------------------------------------------
+
+Funktioniert nur, wenn die App ueber einen Webserver laeuft (nicht per
+Doppelklick). Datei hier ablegen und in index.html bei AUTO_TRACKS eintragen:
+
+    const AUTO_TRACKS = [
+      { name:'Trainingsrunde', cat:'beginner', file:'Training.gpx' },
+    ].map(t => ({ ...t, url: REPO_RAW_BASE + t.file }));
+
+cat kann 'beginner', 'mittel' oder 'expert' sein und bestimmt die Linienfarbe.

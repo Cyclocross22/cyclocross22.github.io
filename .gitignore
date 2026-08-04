@@ -1,0 +1,7 @@
+# Lokales Claude-Code-Werkzeug (Vorschau-Server, Launch-Konfiguration)
+/.claude/
+
+# Arbeits- und Referenzbilder der Veranstalterin — nicht Teil der App
+# (nur Wurzel-Ebene; icons/ und gpx/ bleiben unberührt)
+/*.jpg
+/*.png
