@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unicon 22 Cyclocross · Flyer</title>
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link href="https://fonts.bunny.net/css2?family=Barlow+Condensed:wght@600;800;900&family=Barlow:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0e14; --karte:#ffffff; --tx:#e8ecf5; --td:#8a97b0;
+    --or:#e1552b; --am:#f5a623; --vi:#5b4e8c; --bl:#22357a;
+    --verlauf:linear-gradient(95deg,var(--or) 0%,var(--am) 30%,var(--vi) 65%,var(--bl) 100%);
+    --fh:'Barlow Condensed','Arial Narrow',Arial,sans-serif;
+    --ft:'Barlow',Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:#20242e}
+  @page{size:A4 portrait;margin:0}
+  body{display:flex;justify-content:center;padding:10px}
+  @media print{ html,body{background:var(--bg);padding:0} .blatt{box-shadow:none} }
+  .blatt{
+    width:210mm;height:297mm;flex-shrink:0;position:relative;overflow:hidden;
+    background:var(--bg);color:var(--tx);font-family:var(--ft);
+    box-shadow:0 12px 48px rgba(0,0,0,.6);
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;
+    display:flex;flex-direction:column;padding:9mm 13mm 8mm;
+  }
+  /* Dezente Farbschimmer in den Ecken */
+  .blatt::before{content:"";position:absolute;inset:0;pointer-events:none;
+    background:
+      radial-gradient(46mm 46mm at 4% 2%, rgba(225,85,43,.22), transparent 70%),
+      radial-gradient(52mm 52mm at 98% 1%, rgba(245,166,35,.14), transparent 70%),
+      radial-gradient(60mm 60mm at 2% 99%, rgba(91,78,140,.25), transparent 70%),
+      radial-gradient(56mm 56mm at 99% 98%, rgba(34,53,122,.30), transparent 70%);}
+  .inhalt{position:relative;display:flex;flex-direction:column;height:100%}
+
+  /* Kopf */
+  .kopfzeile{display:flex;align-items:center;gap:6mm}
+  .badge{width:17mm;height:17mm;border-radius:4mm;flex-shrink:0;
+    background:linear-gradient(135deg,var(--or) 0%,var(--am) 32%,var(--vi) 68%,var(--bl) 100%);
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--fh);font-weight:900;font-size:8mm;color:#fff;letter-spacing:.5px;
+    text-shadow:0 1px 2px rgba(0,0,0,.45)}
+  .ueber{font-family:var(--fh);font-weight:800;font-size:7.5mm;letter-spacing:3px;color:var(--tx)}
+  .ueber small{display:block;font-size:4mm;letter-spacing:2.5px;color:var(--td);font-weight:600;text-transform:uppercase}
+  .titel{
+    font-family:var(--fh);font-weight:900;text-transform:uppercase;
+    font-size:21mm;line-height:.9;letter-spacing:1px;margin-top:3.5mm;
+    background:var(--verlauf);-webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .untertitel{font-family:var(--fh);font-weight:600;font-size:5.8mm;letter-spacing:1.4px;color:var(--tx);margin-top:2mm}
+  .untertitel b{color:var(--am);font-weight:800}
+
+  /* QR-Karte */
+  .qrbereich{display:flex;align-items:center;gap:7mm;margin-top:5mm}
+  .qrkarte{background:var(--karte);border-radius:5mm;padding:6mm;flex-shrink:0;
+    box-shadow:0 4mm 12mm rgba(0,0,0,.45)}
+  .qrkarte svg{display:block;width:104mm;height:104mm}
+  .qrseite{display:flex;flex-direction:column;gap:4mm;min-width:0}
+  .qrseite .scan{font-family:var(--fh);font-weight:900;font-size:10mm;line-height:1;text-transform:uppercase;
+    background:var(--verlauf);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .qrpunkt{display:flex;align-items:center;gap:3mm;font-size:4.6mm;font-weight:500;color:var(--tx)}
+  .qrpunkt .em{font-size:6mm}
+  .url{font-family:var(--fh);font-weight:800;font-size:5.6mm;letter-spacing:.8px;color:var(--am);word-break:break-all}
+
+  /* Info-Kacheln */
+  .kacheln{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4mm;margin-top:5mm}
+  .kachel{border:.6mm solid rgba(255,255,255,.13);border-radius:4mm;padding:3.5mm 4mm;
+    background:rgba(255,255,255,.04)}
+  .kachel h3{font-family:var(--fh);font-weight:800;font-size:5mm;letter-spacing:1px;
+    text-transform:uppercase;color:var(--am);margin-bottom:1.5mm}
+  .kachel p{font-size:3.8mm;line-height:1.45;color:var(--tx)}
+  .kachel p small{color:var(--td)}
+  .kachel .zeit{font-family:var(--fh);font-weight:800;font-size:6.4mm;color:var(--tx)}
+
+  /* Startwellen */
+  .wellen{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4mm;margin-top:3.5mm}
+  .welle{border-radius:4mm;padding:3mm 4mm;color:#fff}
+  .welle.b{background:linear-gradient(135deg,#1c8a4e,#136a3a)}
+  .welle.e{background:linear-gradient(135deg,var(--or),#b23c1b)}
+  .welle.f{background:linear-gradient(135deg,var(--vi),var(--bl))}
+  .welle h4{font-family:var(--fh);font-weight:900;font-size:6mm;letter-spacing:1px;text-transform:uppercase}
+  .welle p{font-size:4mm;line-height:1.45;opacity:.95}
+
+  /* Fußzeile */
+  .fuss{margin-top:auto}
+  .spass{display:flex;justify-content:space-between;gap:4mm;font-size:3.9mm;color:var(--tx);
+    font-weight:500;padding:2.5mm 0 2.5mm;border-top:.5mm solid rgba(255,255,255,.14)}
+  .spass span b{color:var(--am)}
+  .balken{height:3mm;border-radius:1.5mm;background:linear-gradient(90deg,var(--or),var(--am),var(--vi),var(--bl));margin-top:1mm}
+  .signatur{display:flex;justify-content:space-between;font-family:var(--fh);font-weight:600;
+    font-size:3.8mm;letter-spacing:1.4px;text-transform:uppercase;color:var(--td);margin-top:2.5mm}
+</style>
+</head>
+<body>
+<div class="blatt"><div class="inhalt">
+
+  <div class="kopfzeile">
+    <div class="badge">U22</div>
+    <div class="ueber">UNICON 22 · STEYR<small>Einrad Weltmeisterschaft · Unicycling World Championship</small></div>
+  </div>
+
+  <div class="titel">Cyclocross</div>
+  <div class="untertitel">🗓 <b>Freitag · Friday</b> &nbsp;·&nbsp; 8:00 bis 12:00 &nbsp;·&nbsp; 📍 <b>Schlosspark Steyr</b></div>
+
+  <div class="qrbereich">
+    <div class="qrkarte"><svg preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h29v29H0z"/><path stroke="#0b0e14" d="M0 0.5h7m4 0h5m1 0h4m1 0h7M0 1.5h1m5 0h1m2 0h1m1 0h6m1 0h1m1 0h1m1 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m3 0h2m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h4m2 0h2m1 0h1m4 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m1 0h1m2 0h1m3 0h2m2 0h2m1 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m1 0h2m1 0h1m10 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h2m1 0h1m2 0h1m1 0h1m1 0h3M0 8.5h1m1 0h5m2 0h2m5 0h2m1 0h1m2 0h5M0 9.5h2m1 0h2m2 0h1m4 0h4m1 0h3m1 0h4m3 0h1M0 10.5h1m2 0h2m1 0h1m1 0h2m1 0h1m1 0h4m1 0h1m3 0h1m1 0h1M0 11.5h1m2 0h3m1 0h2m2 0h1m1 0h1m1 0h1m2 0h2m2 0h2m1 0h1m1 0h1M1 12.5h4m1 0h2m1 0h1m1 0h2m1 0h2m1 0h1m2 0h1m4 0h2M0 13.5h2m2 0h2m1 0h1m1 0h1m5 0h2m2 0h1m1 0h4m3 0h1M1 14.5h3m1 0h2m2 0h1m2 0h1m8 0h1m1 0h1m1 0h2M0 15.5h5m2 0h4m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h1m2 0h1M2 16.5h6m1 0h1m6 0h2m2 0h1m4 0h2M0 17.5h4m1 0h1m3 0h3m1 0h3m2 0h2m2 0h3m1 0h1m1 0h1M0 18.5h1m2 0h7m2 0h7m1 0h2m1 0h2m1 0h1M0 19.5h1m1 0h1m1 0h2m7 0h1m1 0h1m2 0h2m1 0h2m4 0h1M0 20.5h1m1 0h6m1 0h1m1 0h2m1 0h2m1 0h2m1 0h5m1 0h3M8 21.5h2m1 0h2m2 0h6m3 0h5M0 22.5h7m3 0h3m4 0h1m1 0h2m1 0h1m1 0h3M0 23.5h1m5 0h1m1 0h2m1 0h1m2 0h1m1 0h1m1 0h3m3 0h1m2 0h2M0 24.5h1m1 0h3m1 0h1m1 0h1m2 0h1m5 0h1m2 0h5m1 0h1m1 0h1M0 25.5h1m1 0h3m1 0h1m1 0h2m4 0h2m1 0h4m2 0h1m1 0h2M0 26.5h1m1 0h3m1 0h1m1 0h1m1 0h3m2 0h2m1 0h1m2 0h7M0 27.5h1m5 0h1m4 0h2m1 0h1m1 0h1m2 0h2m1 0h2m1 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m3 0h1m1 0h1m2 0h1m1 0h1m1 0h1"/></svg></div>
+    <div class="qrseite">
+      <div class="scan">Scan<br>mich!</div>
+      <div class="qrpunkt"><span class="em">🗺️</span><span>Streckenkarte offline<br><small>Offline course map</small></span></div>
+      <div class="qrpunkt"><span class="em">⏱</span><span>Rundenzähler &amp; Restzeit<br><small>Lap counter &amp; race clock</small></span></div>
+      <div class="qrpunkt"><span class="em">🌍</span><span>Alle Infos in 5 Sprachen<br><small>DE · EN · FR · ES · 日本語</small></span></div>
+      <div class="url">cyclocross22.github.io</div>
+    </div>
+  </div>
+
+  <div class="kacheln">
+    <div class="kachel">
+      <h3>🏃 Le-Mans-Start</h3>
+      <p>Einrad 50 m ablegen, laufen, aufsteigen, los!<br><small>Drop your uni 50 m out, run, mount, ride!</small></p>
+    </div>
+    <div class="kachel">
+      <h3>🎭 Kostüm an!</h3>
+      <p>Bestes Kostüm jedes Starts gewinnt Schokolade 🍫<br><small>Best costume of each wave wins chocolate</small></p>
+    </div>
+    <div class="kachel">
+      <h3>🏊 Afterparty</h3>
+      <p>Danach Schwimmparty. Flamingo mitbringen!<br><small>Swim party after the race. Bring the flamingo!</small></p>
+    </div>
+  </div>
+
+  <div class="wellen">
+    <div class="welle b"><h4>Beginner</h4><p>Check-in 7:15<br>Start 8:00 · ca. 30 min</p></div>
+    <div class="welle e"><h4>Elite</h4><p>Check-in 8:30 · ca. 45 min<br>Weltmeistertitel! · World title!</p></div>
+    <div class="welle f"><h4>Just for Fun</h4><p>Check-in 10:00 · ca. 30 min<br>Anmeldung vor Ort · sign up on site</p></div>
+  </div>
+
+  <div class="fuss">
+    <div class="spass">
+      <span>🥤 <b>Orangerie</b> ab 8:00: Essen &amp; Getränke · WC 50 Cent</span>
+      <span>🧡 Volunteers gesucht: <b>signupgenius.com/go/Unicon22</b></span>
+    </div>
+    <div class="balken"></div>
+    <div class="signatur">
+      <span>Peace and Love ❤ Euer Cyclocross-Team</span>
+      <span>cyclocross22.github.io</span>
+    </div>
+  </div>
+
+</div></div>
+</body>
+</html>
