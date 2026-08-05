@@ -1228,10 +1228,16 @@ Zieldurchfahrt beendet den Lauf. Das Laufergebnis speichert `raceMode`,
 
 ### Strecken-Info (5 Sprachen)
 
-Über das Start/Ziel-Popup (ℹ️ Strecken-Info) öffnet sich der Course Guide
-mit Renntag-Infos, Le-Mans-Startprozedur, Klassen und der kompletten
-Streckenbeschreibung in 14 Schritten — auf Deutsch, Englisch, Französisch,
-Spanisch und Japanisch (Konstante `COURSE_INFO` in `index.html`).
+Über den ℹ️-Knopf und das Start/Ziel-Popup öffnet sich der Course Guide
+(Konstante `COURSE_INFO` in `index.html`) auf Deutsch, Englisch, Französisch,
+Spanisch und Japanisch. Abschnitte: Was erwartet dich, Wo, Wann, Mitbringen
+(inkl. Startnummer-und-Chip-Regel: Wettkämpfer beides, Just for Fun nichts
+davon), Vor Ort (Orangerie), Startwellen mit Le-Mans-Prozedur, Siegerehrung
+(Altersklassen 0 bis 10, 11 bis 14, 15 bis 18, 19 bis 29, 30 bis 49,
+50 bis 69, 70+), Volunteers, Afterparty. Jede Sprache ist eigenständig
+nativ formuliert (keine wörtliche Übersetzung) und kommt bewusst ohne
+Gedankenstriche aus; die frühere 14-Schritte-Rundenbeschreibung wurde auf
+Wunsch der Veranstalterin entfernt.
 
 Start/Ziel stammt aus der Konstante `START_FINISH`, Farbe abweichend von der
 Kategorie: UNICON-Orange #f5a623, `large: true`. Der Spielplatz im Südwesten
