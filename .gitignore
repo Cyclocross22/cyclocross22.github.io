@@ -5,3 +5,6 @@
 # (nur Wurzel-Ebene; icons/ und gpx/ bleiben unberührt)
 /*.jpg
 /*.png
+
+# IDE-Konfiguration
+/.idea/
