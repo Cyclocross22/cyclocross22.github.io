@@ -6,13 +6,10 @@
   <metadata>
     <name>Rundkurs Schlosspark Steyr</name>
     <desc>Rundkurs fuer das Cyclocross der UNICON 22 im Schlosspark Steyr.
-      Reine Runde, ~920 m, beginnt und endet an der Rundeneinfahrt am Nordrand
-      (17 m westlich der Start/Ziel-Flagge). Verlauf nach der eingezeichneten
-      Linie der Veranstalterin: Schleife am Kraftpark, enger Zickzack, Bogen
-      unten ums Zaunende, Finger innen am Zaun, untere Wanne, Haarnadel am
-      Spielplatz, Schlenker zur Baumreihe, Klo-Kehre, Slalom, Suedrand mit
-      Wiesen-Kurve (~13 m nach Norden), scharf links zum See, Innenseite
-      (Westufer), Baumstuhl-Slalom, Nordweg zurueck. Kreuzt keinen Zaun,
+      Reine Runde, ~960 m, beginnt und endet an der Rundeneinfahrt am
+      Nordrand (17 m westlich der Start/Ziel-Flagge). Verlauf nach der
+      eingezeichneten Linie der Veranstalterin, inkl. Wiesen-Slalom am
+      Nordrand (v12) und Wiesen-Kurve am Suedrand. Kreuzt keinen Zaun,
       keine Mauer, kein Gebaeude.</desc>
     <keywords>Cyclocross, UNICON 22, Steyr, Schlosspark, Rundkurs</keywords>
   </metadata>
@@ -42,7 +39,32 @@
       <trkpt lat="48.041504" lon="14.416446"/>
       <trkpt lat="48.041452" lon="14.416305"/>
       <trkpt lat="48.041312" lon="14.415958"/>
-      <trkpt lat="48.041191" lon="14.415624"/>
+      <trkpt lat="48.041259" lon="14.415951"/>
+      <trkpt lat="48.041246" lon="14.415934"/>
+      <trkpt lat="48.041238" lon="14.415903"/>
+      <trkpt lat="48.041221" lon="14.415886"/>
+      <trkpt lat="48.041199" lon="14.415900"/>
+      <trkpt lat="48.041179" lon="14.415880"/>
+      <trkpt lat="48.041174" lon="14.415856"/>
+      <trkpt lat="48.041159" lon="14.415831"/>
+      <trkpt lat="48.041128" lon="14.415808"/>
+      <trkpt lat="48.041115" lon="14.415791"/>
+      <trkpt lat="48.041091" lon="14.415783"/>
+      <trkpt lat="48.041097" lon="14.415768"/>
+      <trkpt lat="48.041112" lon="14.415747"/>
+      <trkpt lat="48.041100" lon="14.415728"/>
+      <trkpt lat="48.041071" lon="14.415723"/>
+      <trkpt lat="48.041064" lon="14.415703"/>
+      <trkpt lat="48.041078" lon="14.415683"/>
+      <trkpt lat="48.041110" lon="14.415660"/>
+      <trkpt lat="48.041100" lon="14.415637"/>
+      <trkpt lat="48.041075" lon="14.415643"/>
+      <trkpt lat="48.041065" lon="14.415624"/>
+      <trkpt lat="48.041076" lon="14.415599"/>
+      <trkpt lat="48.041098" lon="14.415576"/>
+      <trkpt lat="48.041119" lon="14.415586"/>
+      <trkpt lat="48.041143" lon="14.415574"/>
+      <trkpt lat="48.041179" lon="14.415591"/>
       <trkpt lat="48.041022" lon="14.415165"/>
       <trkpt lat="48.040936" lon="14.415251"/>
       <trkpt lat="48.040875" lon="14.415337"/>
